@@ -14,7 +14,7 @@ export function RevenueChart({ data }: Props) {
         <XAxis dataKey="day" tick={{ fontSize: 12, fill: '#64748b' }} />
         <YAxis tick={{ fontSize: 12, fill: '#64748b' }} tickFormatter={(v) => `$${v}`} />
         <Tooltip
-          formatter={(value: number) => [`$${value.toFixed(2)}`, 'Ingresos']}
+          formatter={(value: number | undefined) => [`$${(value ?? 0).toFixed(2)}`, 'Ingresos']}
           contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0' }}
         />
         <Bar dataKey="amount" fill="#2563eb" radius={[4, 4, 0, 0]} />
